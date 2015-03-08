@@ -2,9 +2,11 @@
 var Ghost = {
     image: document.createElement('canvas'),
     
-    size: 50,
+    size: 30,
     
     speed: 1,
+    
+    proximity: 30*30,
     
     turnCoefficient: 0.1,
 };
@@ -65,7 +67,7 @@ Ghost.setInput = function(g){
     var closest = pacmen.map(function(e, i){return [dist2(e, g), i]}).reduce(Pacman.reduceMin);
     
     // if it is closer than 50 (50^2 = 2500) count as eaten
-    if (closest[0] < 2500){
+    if (closest[0] < Ghost.proximity){
         
         //eats the pacman
         g.fitness++;
