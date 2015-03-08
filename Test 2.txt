@@ -1,0 +1,30 @@
+TEST 2
+
+DATE:
+-----
+3/8/2015 ~7pm
+
+CHANGES MADE:
+-------------
+1. One input, relative angle
+
+OBSERVATIONS:
+-------------
+Gen.
+1  : Some show promise, obviously responding to stimuli
+4  : Half the population seem to negatively respond to stimuli
+5  : Four remained on the screen, they had simple motion
+7  : They all left the screen, but some returned. They turn slowly
+10 : Most seem to be a lot better
+15 : They are pretty good. All are actively seeking the closest pacman
+
+CONCLUSIONS:
+------------
+Realizing that the input and output needs to make sense in each other's context really helped.
+When determining the input/output, make sure they are similar. (Don't input [x2-x1, y2-x1] and output omega)
+
+POTENTIAL FUTURE CHANGES:
+-------------------------
+1. More neurons to see how smart they can get
+2. Introduce a fresh ghost every generation to help with diversity
+3. Alter code such that instead of calculating a normalized difference, just find the literal difference

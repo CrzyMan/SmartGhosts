@@ -80,7 +80,9 @@ Ghost.setInput = function(g){
     } else {
         var pos = pacmen[closest[1]];
         var inputRaw = normalizedDiff(g, pos);
-        input = [inputRaw.x, inputRaw.y, -1];
+        
+        // TODO: change to relative angle
+        input = [Math.atan2(inputRaw.y, inputRaw.x)-g.a, -1];
     }
     
     
@@ -100,7 +102,9 @@ Ghost.update = function(g){
 
 // turns the ghost 
 Ghost.turn = function(da, g){
-    g.a += da*Ghost.turnCoefficient;
+    // TODO: bound to +-Pi
+    n = (g.a+da*Ghost.turnCoefficient);
+    g.a = n>180?n-360:n>-180?n:n+360
 };
 
 // moves the ghost

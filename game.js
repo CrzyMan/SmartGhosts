@@ -28,7 +28,7 @@ document.getElementById('span_generation').innerText = generation;
 var numOfNeurons = 3;
 var numOfGhosts = 10;
 var numOfPacmen = 10;
-var numOfInputs = 2;
+var numOfInputs = 1;
 
 // should be called once everything has been loaded
 function initializeGame(){
@@ -115,6 +115,7 @@ function findBiasedIndex(l){
 // stop animation
 function stop(){
     cancelAnimationFrame(reqAnimFrame);
+    console.log("Simulation Stopped");
 }
 
 // clear a canvas
