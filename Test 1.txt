@@ -1,0 +1,35 @@
+TEST 1
+
+DATE:
+-----
+3/7/2015 ~5pm
+
+CHANGES MADE:
+-------------
+none, first test
+
+OBSERVATIONS:
+-------------
+Gen.
+13 : not much
+14 : starting to show promise
+22 : looking stupid again
+23 : looking better
+26 : most seem to not have simple paths
+30 : simple paths again, maybe reset wasn't such a good idea...
+42 : most react to stimuli
+44 : some react
+51 : one shows near intelligence
+54 : most react
+59 : most react
+60 : some react
+72 : it's like they have a harder time moving in one direction
+85 : meh, stopping
+
+CONCLUSIONS:
+------------
+The current inputs are are the right track (normalized), but I should probably set the input relative to the "orientation" of the ghost. Turning speed to the left or right should relate to the relative position of the closest pacman. Perhaps change input to the relative angle?
+
+POTENTIAL FUTURE CHANGES:
+-------------------------
+1. Reduce to single input, relative angle
