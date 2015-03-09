@@ -29,7 +29,7 @@ Ghost.image.width = Ghost.size;
     c.lineTo(Ghost.size, Ghost.size);
     c.lineTo(Ghost.size, Ghost.sizeh);
     c.closePath();
-    c.fillStyle = "#3333ff";
+    c.fillStyle = "red";
     c.fill();
 })();
 
