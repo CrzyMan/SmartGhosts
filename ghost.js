@@ -61,12 +61,14 @@ Ghost.setInput = function(g){
         // this should never happen
     }
     
+    // TODO: put closest and eating in a loop to reduce potential stack size
+    
     // normalize the vector from the ghost to the closest pacman
 
     //                   find the distances                           find the closest([distance, index])
-    var closest = pacmen.map(function(e, i){return [dist2(e, g), i]}).reduce(Pacman.reduceMin);
+    var closest = pacmen.map(function(p, i){return [dist2(p, g), i]}).reduce(Pacman.reduceMin);
     
-    // if it is closer than 50 (50^2 = 2500) count as eaten
+    // if it is closer than Ghost.proximity, count as eaten
     if (closest[0] < Ghost.proximity){
         
         //eats the pacman
@@ -83,7 +85,6 @@ Ghost.setInput = function(g){
         var pos = pacmen[closest[1]];
         var inputRaw = normalizedDiff(g, pos);
         
-        // TODO: change to relative angle
         input = [Math.atan2(inputRaw.y, inputRaw.x)-g.a, -1];
     }
     
@@ -98,13 +99,10 @@ Ghost.update = function(g){
     Ghost.turn(Brain.process(g.brain), g);
     
     Ghost.move(g);
-    
-    Ghost.draw(g, ctx_ghosts);
 };
 
 // turns the ghost 
 Ghost.turn = function(da, g){
-    // TODO: bound to +-Pi
     n = (g.a+da*Ghost.turnCoefficient);
     g.a = n>180?n-360:n>-180?n:n+360
 };

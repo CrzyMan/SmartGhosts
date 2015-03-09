@@ -21,7 +21,7 @@ Neuron.randomize = function (n){
 // "cross" the traits of two neurons
 Neuron.cross = function(n1, n2){
     
-    // get number in range and perfom a cross technique based
+    // get number in range and perfom a cross technique based on the number
     switch (~~(Math.random()*5)){
         // max
         case 0:
@@ -51,6 +51,8 @@ Neuron.cross = function(n1, n2){
             console.log("wat... ");
             break;
     }
+    
+    // TODO: this is bad and I should feel bad. Make it always the correct size
     return [0,0,-1];
 }
 
@@ -63,7 +65,7 @@ Neuron.mutate = function(n){
 // get the result from the neuron
 Neuron.process = function(n){
     // how far above activation energy this neuron is
-    return input.map(function mapNeuron(e,i){
+    return input.map(function (e,i){
         return e*n[i];
     }).reduce(reduceSum);
 };

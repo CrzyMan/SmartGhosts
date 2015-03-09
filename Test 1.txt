@@ -28,7 +28,9 @@ Gen.
 
 CONCLUSIONS:
 ------------
-The current inputs are are the right track (normalized), but I should probably set the input relative to the "orientation" of the ghost. Turning speed to the left or right should relate to the relative position of the closest pacman. Perhaps change input to the relative angle?
+The current inputs are are the right track (normalized), but I should probably set the input relative to the "orientation" of the ghost.
+Turning speed to the left or right should relate to the relative position of the closest pacman.
+Perhaps change input to the relative angle?
 
 POTENTIAL FUTURE CHANGES:
 -------------------------

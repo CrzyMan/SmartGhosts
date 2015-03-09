@@ -30,7 +30,8 @@ Brain.mutate = function(b){
     return b.map(Neuron.mutate);
 }
 
-// map function for the brain
+/* map function for the brain *
 function mapBrain(n){
     return Neuron.process(n)
 }
+/* */

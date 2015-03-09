@@ -30,5 +30,5 @@ POTENTIAL FUTURE CHANGES:
 -------------------------
 1. More neurons to see how smart they can get
 2. Introduce a fresh ghost every generation to help with diversity
-3. Alter code such that instead of calculating a normalized difference, just find the literal difference
-4. Resolve memory leak
+3. Alter code such that instead of calculating a normalized difference, just find the literal difference for fewer calculations
+4. Resolve potential memory leak

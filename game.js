@@ -45,9 +45,9 @@ function initializeGame(){
     for (var i = 0; i < numOfPacmen; i++)
         pacmen.push(Pacman.new());
     
-    mainTick();
-    
     pacmen.forEach(Pacman.draw);
+    
+    mainTick();
 }
 
 
@@ -61,10 +61,12 @@ function mainTick(){
     clear(ctx_ghosts);
     
     ghosts.forEach(Ghost.update);
+    ghosts.forEach(Ghost.draw);
     
-    // if this generation has been going for 30 seconds (30 seconds * 60 ticks per second)
+    // if this generation has been going for 30 seconds (30 seconds * 60 ticks per second = 1800)
     if(ticks >= 1800){
         ticks = 0;
+        
         generation++;
         document.getElementById('span_generation').innerText = generation;
         
@@ -102,7 +104,7 @@ function mainTick(){
 
 
 
-
+/* *
 function findBiasedIndex(l){
     var a = 0;
     // find a ghost, biased toward more fit individuals
@@ -111,6 +113,7 @@ function findBiasedIndex(l){
     } while (a >= byFitness.length)
     return a;
 }
+/* */
 
 // stop animation
 function stop(){
@@ -130,12 +133,19 @@ function makeVector(x, y){
     return {x: x, y: y};
 }
 
-// random float inclusively between min and max
+/**
+ * random float inclusively between min and max
+ * Distribution: uniform
+ */
+
 function rand(min, max){
     return min + Math.random()*(max-min);
 }
 
-// normally distributed random numbers
+/**
+ * random numbers
+ * Distribution: Balanced "Normal"
+ */
 function nrand(){
     var x1, x2, rad, y1;
     do {
@@ -149,7 +159,7 @@ function nrand(){
 
 /**
  * Get random number
- * Distribution: 4th quadrant circular starting at 0,0
+ * Distribution: stepped 1st quadrant circular
  */
 function crand(max){
     return ~~(max - max*Math.sin(Math.acos(Math.random())));
